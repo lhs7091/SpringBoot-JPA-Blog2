@@ -14,8 +14,7 @@ function save() {
         dataType: "json"
     }).done(function(resp){
         alert("Sign Up Success");
-        console.log(resp)
-        //location.href="/";
+        location.href="/";
     }).fail(function(){
         alert(JSON.stringify(error));
     });
