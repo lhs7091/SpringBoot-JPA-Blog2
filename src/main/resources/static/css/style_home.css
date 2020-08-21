@@ -166,6 +166,24 @@ label #sidebar_btn:hover{
   opacity: 0.8;
 }
 
+.btn {
+  width: 150px;
+  background-color: #5995fd;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  float: right;
+}
+.btn:hover {
+  background-color: #4d84e2;
+}
 /* Responsive CSS */
 
 @media screen and (max-width: 780px){

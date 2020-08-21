@@ -4,7 +4,10 @@ import com.company.workspace.model.RoleType;
 import com.company.workspace.model.User;
 import com.company.workspace.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class UserService {
@@ -12,15 +15,16 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public int signUp(User user){
-        try {
-            user.setRole(RoleType.USER);
-            userRepository.save(user);
-            return 1;
-        }catch (Exception e){
-            e.printStackTrace();
-            System.out.println("UserService : signUp() : "+e.getMessage());
-        }
-        return -1;
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
+    @Transactional
+    public void signUp(User user){
+        String rawPassword = user.getPassword();
+        String encPassword = encoder.encode(rawPassword);
+        user.setRole(RoleType.USER);
+        user.setPassword(encPassword);
+        userRepository.save(user);
     }
+
 }

@@ -15,11 +15,11 @@ public class UserApiController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/api/user")
+    @PostMapping("/auth/signupProc")
     public ResponseDto<Integer> save(@RequestBody User user){
         System.out.println("UserApiController : call save method");
-        //TODO DB insert and return
         userService.signUp(user);
         return new ResponseDto<Integer>(HttpStatus.OK, 1);
     }
+
 }
