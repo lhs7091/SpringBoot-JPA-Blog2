@@ -166,7 +166,7 @@ label #sidebar_btn:hover{
   opacity: 0.8;
 }
 
-.btn {
+.btn-write {
   width: 150px;
   background-color: #5995fd;
   border: none;
@@ -181,9 +181,14 @@ label #sidebar_btn:hover{
   transition: 0.5s;
   float: right;
 }
-.btn:hover {
+.btn-write:hover {
   background-color: #4d84e2;
 }
+
+a, u {
+    text-decoration: none;
+}
+
 /* Responsive CSS */
 
 @media screen and (max-width: 780px){

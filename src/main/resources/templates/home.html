@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="/js/user.js"></script>
+    <script src="/js/board.js"></script>
 </head>
 <body>
 
@@ -22,7 +22,7 @@
         </label>
 
         <div class="left_area">
-            <h3>Coding <span>Snow</span></h3>
+            <a href="/home"><h3>Coding <span>Snow</span></h3></a>
 
         </div>
         <div class="right_area">
@@ -81,7 +81,7 @@
         </div>
         <!--Logged user: <span sec:authentication="principal" >Bob</span>
         Logged user: <span th:text="${#authentication.principal}"></span> -->
-        <input sec:authorize="isAuthenticated()" type="button" class="btn" value="Write" href=""/>
+        <a href="/board/saveForm"><input sec:authorize="isAuthenticated()" type="button" class="btn-write" value="Write" ></a>
     </div>
 
     <script type="text/javascript">

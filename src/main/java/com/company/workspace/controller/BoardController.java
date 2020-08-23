@@ -13,7 +13,13 @@ public class BoardController {
 
     @GetMapping("/home")
     public String home(){
+
         return "/home.html";
+    }
+
+    @GetMapping("/board/saveForm")
+    public String saveForm(){
+        return "/board/write.html";
     }
 
 }
