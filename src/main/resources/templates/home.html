@@ -70,18 +70,15 @@
     <!-- Sidebar end -->
 
     <div class="content">
-        <div class="card">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <div class="card" th:each="board:${boards}">
+            <a href="#" ><h1><p th:text="${board.title}"></p></h1></a>
+            <!--<p th:text="${board.content}"></p>-->
         </div>
-        <div class="card">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
-        <div class="card">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
+
         <!--Logged user: <span sec:authentication="principal" >Bob</span>
         Logged user: <span th:text="${#authentication.principal}"></span> -->
-        <a href="/board/saveForm"><input sec:authorize="isAuthenticated()" type="button" class="btn-write" value="Write" ></a>
+        <a style="text-decoration:none; color:#333" href="/board/saveForm"><input sec:authorize="isAuthenticated()" type="button" class="btn-write" value="Write" ></a>
     </div>
 
     <script type="text/javascript">
